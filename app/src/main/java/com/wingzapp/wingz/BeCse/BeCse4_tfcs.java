@@ -67,7 +67,6 @@ public class BeCse4_tfcs extends AppCompatActivity {
                 toast.show();
             }
         });
-        setContentView(R.layout.activity_be_cse5_dc);
         s15.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

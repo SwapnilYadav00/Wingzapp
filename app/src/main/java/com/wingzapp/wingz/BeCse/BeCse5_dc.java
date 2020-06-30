@@ -27,6 +27,7 @@ public class BeCse5_dc extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_be_cse5_dc);
 
         sum19="1-yz7S5MCZt3Ww9gAxD_IeVzjXWj5Ay5A";
         sum18="1c64ghhQ0yj5FkwGgIWecv5U7BlT5btG2";
@@ -70,7 +71,7 @@ public class BeCse5_dc extends AppCompatActivity {
 
             }
         });
-        setContentView(R.layout.activity_be_cse5_dc);
+
         s15.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
