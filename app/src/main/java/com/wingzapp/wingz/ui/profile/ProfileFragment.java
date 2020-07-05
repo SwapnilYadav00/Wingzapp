@@ -1,6 +1,7 @@
 package com.wingzapp.wingz.ui.profile;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,7 +28,7 @@ import com.wingzapp.wingz.TimeTableActivity;
 import java.util.Objects;
 
 public class ProfileFragment extends Fragment {
-    TextView donate, contact, logout, name, number, email;
+    TextView donate, contact, logout, name, number, email,web;
     DatabaseReference host;
     String id = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
@@ -38,6 +39,7 @@ public class ProfileFragment extends Fragment {
         donate = root.findViewById(R.id.donate);
         contact = root.findViewById(R.id.contact);
         name = root.findViewById(R.id.name);
+        web = root.findViewById(R.id.website);
         number = root.findViewById(R.id.number);
         email = root.findViewById(R.id.email);
         host = FirebaseDatabase.getInstance().getReference().child("Student");
@@ -59,8 +61,20 @@ public class ProfileFragment extends Fragment {
                 getActivity().finish();
             }
         });
+        web.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openurl();
+            }
+        });
 
         return root;
+    }
+
+    private void openurl() {
+        Uri uri=Uri.parse("https://wingzapp.blogspot.com");
+        Intent launchweb=new Intent(Intent.ACTION_VIEW, uri);
+        startActivity(launchweb);
     }
 
     private void read() {

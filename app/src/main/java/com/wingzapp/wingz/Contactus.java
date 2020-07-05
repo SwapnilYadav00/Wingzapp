@@ -14,7 +14,6 @@ ImageButton email,insta,fb;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contactus);
-
         email=findViewById(R.id.email);insta=findViewById(R.id.insta);fb=findViewById(R.id.fb);
 
         insta.setOnClickListener(new View.OnClickListener() {
@@ -31,5 +30,16 @@ ImageButton email,insta,fb;
                 startActivity(intent);
             }
         });
+        email.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String to ="wingzapp.co@gmail.com";
+                Intent intent=new Intent(Intent.ACTION_SEND);
+                intent.putExtra(Intent.EXTRA_EMAIL,new String[]{to});
+                intent.setType("message/rfc822");
+                startActivity(Intent.createChooser(intent,"Choose an Email Client :"));
+            }
+        });
+
     }
 }

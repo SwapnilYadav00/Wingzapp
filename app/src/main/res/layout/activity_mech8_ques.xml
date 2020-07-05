@@ -17,7 +17,8 @@
             android:layout_marginRight="10dp"
             android:layout_marginTop="50dp"
             android:layout_marginBottom="10dp"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            tools:ignore="UselessParent">
 
 
             <TextView
@@ -135,7 +136,7 @@
                 android:textStyle="bold" />
 
             <Button
-                android:id="@+id/sm"
+                android:id="@+id/mis"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/round_button"

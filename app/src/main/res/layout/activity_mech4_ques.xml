@@ -36,7 +36,7 @@
                 tools:ignore="HardcodedText,LabelFor,TextViewEdits"/>
 
             <Button
-                android:id="@+id/em2"
+                android:id="@+id/m4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/round_button"
@@ -75,8 +75,8 @@
                 android:id="@+id/mp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/round_button"
                 android:layout_margin="10dp"
+                android:background="@drawable/round_button"
                 android:text="@string/mech4_mp"
                 android:textAlignment="center"
                 android:textAllCaps="true"
@@ -84,11 +84,11 @@
                 android:textStyle="bold" />
 
             <Button
-                android:id="@+id/thermo"
+                android:id="@+id/et"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/round_button"
                 android:layout_margin="10dp"
+                android:background="@drawable/round_button"
                 android:text="@string/mech4_thermo"
                 android:textAlignment="center"
                 android:textAllCaps="true"
