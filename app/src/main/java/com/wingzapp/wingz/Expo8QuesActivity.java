@@ -28,7 +28,7 @@ Button ampp,bme,caps,dsp,ed,eds,ehvac,pq,psbed,sp;
         ampp = findViewById(R.id.ampp);
         bme = findViewById(R.id.bme);
         caps = findViewById(R.id.caps);
-        dsp = findViewById(R.id.dsp);
+        dsp = findViewById(R.id.dsd);
         ed = findViewById(R.id.ed);
         eds = findViewById(R.id.eds);
         ehvac = findViewById(R.id.ehvac);

@@ -98,7 +98,7 @@ public class HomeFragment extends Fragment {
     }
 
     private void read() {
-        host.child(id).addValueEventListener(new ValueEventListener() {
+        host.child(id).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 String fullname = dataSnapshot.child("Fullname").getValue(String.class);
