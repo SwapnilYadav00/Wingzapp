@@ -1,5 +1,7 @@
 package com.wingzapp.wingz.ui.profile;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -30,18 +32,20 @@ import java.util.Objects;
 public class ProfileFragment extends Fragment {
     TextView donate, contact, logout, name, number, email,web;
     DatabaseReference host;
+    AlertDialog.Builder builder;
     String id = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
-        View root = inflater.inflate(R.layout.fragment_profile, container, false);
+        final View root = inflater.inflate(R.layout.fragment_profile, container, false);
         donate = root.findViewById(R.id.donate);
         contact = root.findViewById(R.id.contact);
         name = root.findViewById(R.id.name);
         web = root.findViewById(R.id.website);
         number = root.findViewById(R.id.number);
         email = root.findViewById(R.id.email);
+        builder = new AlertDialog.Builder(getActivity());
         host = FirebaseDatabase.getInstance().getReference().child("Student");
         read();
 
@@ -50,6 +54,24 @@ public class ProfileFragment extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), Contactus.class);
                 startActivity(intent);
+            }
+        });
+        donate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                builder.setMessage("Wingzapp serves many students, without charging a single penny from its user." +
+                        " However, for updating the existing module and adding new features require us to invest a fair amount of time and money." +
+                        "If you think that the services of Wingzapp are useful. Then you're welcomed to donate some money to Wingzapp." +
+                        "For donation please contact us.")
+                        .setCancelable(false).setPositiveButton("ok", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+                AlertDialog alert = builder.create();
+                alert.setTitle("Donation");
+                alert.show();
             }
         });
         logout = root.findViewById(R.id.textView);

@@ -1,147 +1,117 @@
 package com.wingzapp.wingz;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
-
-import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.webkit.WebChromeClient;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
 import android.widget.Button;
-import android.widget.ProgressBar;
-import android.widget.Toast;
 
-import static android.view.View.GONE;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class EgQuesBeActivity extends AppCompatActivity {
     Button s19,s18,s17,s16,s15,w19,w18,w17,w16,w15;
-    WebView webView;
-    CardView cardView;
-    private ProgressBar progressBar;
-    @SuppressLint("SetJavaScriptEnabled")
+    String sum19,sum18,sum17,sum16,sum15,win19,win18,win17,win16,win15;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_eg_ques_be);
 
-        webView = findViewById(R.id.WV);
-        progressBar = findViewById(R.id.pb);
-        cardView=findViewById(R.id.card);
-        webView.getSettings().setJavaScriptEnabled(true);
-        webView.getSettings().setLoadWithOverviewMode(true);
-        webView.getSettings().setBuiltInZoomControls(true);
-        webView.getSettings().setDisplayZoomControls(false);
-        webView.setWebChromeClient(new WebChromeClient());
-        webView.setWebViewClient(new WebViewClient() {
+        sum15 =null;        win15 = null;
+        sum16 ="13j2yyNdrmHEiucmp7gCKlhVLQMuk4PuL";      win16 = "14i5bQEZYPr8w1OM2BEIimaQj5TIkGa59";
+        sum17 ="13j2yyNdrmHEiucmp7gCKlhVLQMuk4PuL";      win17 = "14WUmoE-H0gutXRdTHHHxHKygzHn4rFbA";
+        sum18 ="14dJcn0Cyr6ZB3fmZ3pkLBk7eZvlTmo3t";      win18 = null;
+        sum19 =null;      win19 = null;
 
-            @Override
-            public void onPageFinished(WebView view, String url) {
-
-                webView.loadUrl("javascript:(function() { " +
-                        "document.querySelector('[role=\"toolbar\"]').remove();})()");
-                progressBar.setVisibility(GONE);
-            }
-        });
         s15 = findViewById(R.id.s15);s16 = findViewById(R.id.s16);s17 = findViewById(R.id.s17);s18 = findViewById(R.id.s18);s19 = findViewById(R.id.s19);
         w15 = findViewById(R.id.w15); w16 = findViewById(R.id.w16); w17 = findViewById(R.id.w17);w18 = findViewById(R.id.w18); w19 = findViewById(R.id.w19);
 
-        s15.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast toast= Toast.makeText(getApplicationContext(),"Not Available Yet!!",Toast.LENGTH_SHORT);
-                toast.show();
-            }
-        });
         s16.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                progressBar.setVisibility(View.VISIBLE);
-                webView.setVisibility(View.VISIBLE);
-                cardView.setVisibility(GONE);
-                webView.loadUrl("https://drive.google.com/viewerng/viewer?embedded=true&url=https://drive.google.com/u/1/uc?id=13j2yyNdrmHEiucmp7gCKlhVLQMuk4PuL&export=download");
-
-            }
-        });
-        s17.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                progressBar.setVisibility(View.VISIBLE);
-                webView.setVisibility(View.VISIBLE);
-                cardView.setVisibility(GONE);
-                webView.loadUrl("https://drive.google.com/viewerng/viewer?embedded=true&url=https://drive.google.com/u/1/uc?id=13j2yyNdrmHEiucmp7gCKlhVLQMuk4PuL&export=download");
-
-            }
-        });
-        s18.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                progressBar.setVisibility(View.VISIBLE);
-                webView.setVisibility(View.VISIBLE);
-                cardView.setVisibility(GONE);
-                webView.loadUrl("https://drive.google.com/viewerng/viewer?embedded=true&url=https://drive.google.com/u/1/uc?id=14dJcn0Cyr6ZB3fmZ3pkLBk7eZvlTmo3t&export=download");
-
-            }
-        });
-        s19.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast toast= Toast.makeText(getApplicationContext(),"Not Available Yet!!",Toast.LENGTH_SHORT);
-                toast.show();
-            }
-        });
-        w15.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast toast= Toast.makeText(getApplicationContext(),"Not Available Yet!!",Toast.LENGTH_SHORT);
-                toast.show();
-            }
-        });
-        w16.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                progressBar.setVisibility(View.VISIBLE);
-                webView.setVisibility(View.VISIBLE);
-                cardView.setVisibility(GONE);
-                webView.loadUrl("https://drive.google.com/viewerng/viewer?embedded=true&url=https://drive.google.com/u/1/uc?id=14i5bQEZYPr8w1OM2BEIimaQj5TIkGa59&export=download");
-
+                Intent intent = new Intent(getApplicationContext(), PdfViewer.class);
+                intent.putExtra("id",sum16);
+                startActivity(intent);
             }
         });
         w17.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                progressBar.setVisibility(View.VISIBLE);
-                webView.setVisibility(View.VISIBLE);
-                cardView.setVisibility(GONE);
-                webView.loadUrl("https://drive.google.com/viewerng/viewer?embedded=true&url=https://drive.google.com/u/1/uc?id=14WUmoE-H0gutXRdTHHHxHKygzHn4rFbA&export=download");
+                Intent intent = new Intent(getApplicationContext(), PdfViewer.class);
+                intent.putExtra("id",win17);
+                startActivity(intent);
+            }
 
+        });
+        s18.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), PdfViewer.class);
+                intent.putExtra("id",sum18);
+                startActivity(intent);
             }
         });
         w18.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast toast= Toast.makeText(getApplicationContext(),"Not Available Yet!!",Toast.LENGTH_SHORT);
-                toast.show();
+                Intent intent = new Intent(getApplicationContext(), PdfViewer.class);
+                intent.putExtra("id",win18);
+                startActivity(intent);
             }
+
+        });
+        w15.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), PdfViewer.class);
+                intent.putExtra("id",win15);
+                startActivity(intent);
+            }
+
+        });
+        w16.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), PdfViewer.class);
+                intent.putExtra("id",win16);
+                startActivity(intent);
+            }
+
+        });
+        s15.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), PdfViewer.class);
+                intent.putExtra("id",sum15);
+                startActivity(intent);
+            }
+
+        });
+        s17.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), PdfViewer.class);
+                intent.putExtra("id",sum17);
+                startActivity(intent);
+            }
+
+        });
+        s19.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), PdfViewer.class);
+                intent.putExtra("id",sum19);
+                startActivity(intent);
+            }
+
         });
         w19.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast toast= Toast.makeText(getApplicationContext(),"Not Available Yet!!",Toast.LENGTH_SHORT);
-                toast.show();
+                Intent intent = new Intent(getApplicationContext(), PdfViewer.class);
+                intent.putExtra("id",win19);
+                startActivity(intent);
             }
+
         });
-
-    }
-    public void onBackPressed() {        // to prevent irritating accidental logouts
-
-        if (cardView.getVisibility()== View.VISIBLE){
-            super.onBackPressed();
-        } else {
-            cardView.setVisibility(View.VISIBLE);
-            webView.setVisibility(GONE);
-        }
     }
 }

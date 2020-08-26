@@ -152,19 +152,4 @@
         </GridLayout>
 
     </androidx.cardview.widget.CardView>
-    <WebView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="gone"
-        android:layout_below="@id/card"
-        android:id="@+id/WV">
-    </WebView>
-    <ProgressBar
-        android:id="@+id/pb"
-        android:visibility="gone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"/>
-
 </RelativeLayout>

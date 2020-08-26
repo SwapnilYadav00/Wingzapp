@@ -13,6 +13,113 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup">
+        <service
+            android:name=".GettingDeviceTokenService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTACNE_ID_EVENT"/>
+            </intent-filter>
+
+
+        </service>
+        <service
+            android:name=".Notification_Service"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+
+
+        <activity android:name=".PdfViewer" />
+        <activity android:name=".BeExtc.BeExtc3_Edc" />
+        <activity android:name=".BeExtc.BeExtc3_Emi" />
+        <activity android:name=".BeExtc.BeExtc3_M3" />
+        <activity android:name=".BeExtc.BeExtc3_Nans" />
+        <activity android:name=".BeExtc.BeExtc3_Oop" />
+        <activity android:name=".BeExtc.BeExtc4_Dcfm" />
+        <activity android:name=".BeExtc.BeExtc4_Emf" />
+        <activity android:name=".BeExtc.BeExtc4_M4" />
+        <activity android:name=".BeExtc.BeExtc4_Pdm" />
+        <activity android:name=".BeExtc.BeExtc4_Ss" />
+        <activity android:name=".BeExtc.BeExtc5_Acd" />
+        <activity android:name=".BeExtc.BeExtc5_Awp" />
+        <activity android:name=".BeExtc.BeExtc5_Ec" />
+        <activity android:name=".BeExtc.BeExtc5_Ieed" />
+        <activity android:name=".BeExtc.BeExtc5_mm" />
+        <activity android:name=".BeExtc.BeExtc6_Cse" />
+        <activity android:name=".BeExtc.BeExtc6_Dc" />
+        <activity android:name=".BeExtc.BeExtc6_Dsp" />
+        <activity android:name=".BeExtc.BeExtc6_Fe" />
+        <activity android:name=".BeExtc.BeExtc6_Tcss" />
+        <activity android:name=".BeExtc.BeExtc7_Adsa" />
+        <activity android:name=".BeExtc.BeExtc7_Dsp" />
+        <activity android:name=".BeExtc.BeExtc7_Encry" />
+        <activity android:name=".BeExtc.BeExtc7_Flnn" />
+        <activity android:name=".BeExtc.BeExtc7_Mms" />
+        <activity android:name=".BeExtc.BeExtc7_Oc" />
+        <activity android:name=".BeExtc.BeExtc7_Sp" />
+        <activity android:name=".BeExtc.BeExtc7_Tve" />
+        <activity android:name=".BeExtc.BeExtc8_Ai" />
+        <activity android:name=".BeExtc.BeExtc8_Ccn" />
+        <activity android:name=".BeExtc.BeExtc8_Cmos" />
+        <activity android:name=".BeExtc.BeExtc8_Dip" />
+        <activity android:name=".BeExtc.BeExtc8_Es" />
+        <activity android:name=".BeExtc.BeExtc8_Mre" />
+        <activity android:name=".BeExtc.BeExtc8_Raa" />
+        <activity android:name=".BeExtc.BeExtc8_Rst" />
+        <activity android:name=".BeExtc.BeExtc8_Sc" />
+        <activity android:name=".BeExtc.BeExtc8_Wsn" />
+        <activity android:name=".BeCivil.BeCivil3_Ct" />
+        <activity android:name=".BeCivil.BeCivil3_Ee1" />
+        <activity android:name=".BeCivil.BeCivil3_Geology" />
+        <activity android:name=".BeCivil.BeCivil3_M3" />
+        <activity android:name=".BeCivil.BeCivil3_Som" />
+        <activity android:name=".BeCivil.BeCivil4_Bcm" />
+        <activity android:name=".BeCivil.BeCivil4_Gt1" />
+        <activity android:name=".BeCivil.BeCivil4_Sa1" />
+        <activity android:name=".BeCivil.BeCivil4_Surveying1" />
+        <activity android:name=".BeCivil.BeCivil4_Tre1" />
+        <activity android:name=".BeCivil.BeCivil5_Fm1" />
+        <activity android:name=".BeCivil.BeCivil5_Ge2" />
+        <activity android:name=".BeCivil.BeCivil5_Hwr" />
+        <activity android:name=".BeCivil.BeCivil5_Rccs" />
+        <activity android:name=".BeCivil.BeCivil5_Sa2" />
+        <activity android:name=".BeCivil.BeCivil6_Ee2" />
+        <activity android:name=".BeCivil.BeCivil6_Fm2" />
+        <activity android:name=".BeCivil.BeCivil6_FunctionalEnglish" />
+        <activity android:name=".BeCivil.BeCivil6_Ss" />
+        <activity android:name=".BeCivil.BeCivil6_Surveying2" />
+        <activity android:name=".BeCivil.BeCivil7_Acm" />
+        <activity android:name=".BeCivil.BeCivil7_Ah" />
+        <activity android:name=".BeCivil.BeCivil7_Acs" />
+        <activity android:name=".BeCivil.BeCivil7_Apswm" />
+        <activity android:name=".BeCivil.BeCivil7_Ate" />
+        <activity android:name=".BeCivil.BeCivil7_Bs" />
+        <activity android:name=".BeCivil.BeCivil7_cml" />
+        <activity android:name=".BeCivil.BeCivil7_enc" />
+        <activity android:name=".BeCivil.BeCivil7_Erds" />
+        <activity android:name=".BeCivil.BeCivil7_Srm" />
+        <activity android:name=".BeCivil.BeCivil7_Te2" />
+        <activity android:name=".BeCivil.BeCivil8_Act" />
+        <activity android:name=".BeCivil.BeCivil8_Aeg" />
+        <activity android:name=".BeCivil.BeCivil8_Age" />
+        <activity android:name=".BeCivil.BeCivil8_Arccd" />
+        <activity android:name=".BeCivil.BeCivil8_Asa" />
+        <activity android:name=".BeCivil.BeCivil8_Asd" />
+        <activity android:name=".BeCivil.BeCivil8_Cef" />
+        <activity android:name=".BeCivil.BeCivil8_Drmt" />
+        <activity android:name=".BeCivil.BeCivil8_Ems" />
+        <activity android:name=".BeCivil.BeCivil8_Fce" />
+        <activity android:name=".BeCivil.BeCivil8_Gigit" />
+        <activity android:name=".BeCivil.BeCivil8_Gis" />
+        <activity android:name=".BeCivil.BeCivil8_Ie" />
+        <activity android:name=".BeCivil.BeCivil8_Pad" />
+        <activity android:name=".BeCivil.BeCivil8_Psc" />
+        <activity android:name=".BeCivil.BeCivil8_Wm" />
+        <activity android:name=".BeCivil.BeCivil8_Wpe" />
+        <activity android:name=".BeCivil.BeCivil8_Wtds" />
+        <activity android:name=".BeCivil.BeCivil8_Wwwt" />
         <activity android:name=".BeExpo.BeExpo8_sp" />
         <activity android:name=".BeExpo.BeExpo8_psbed" />
         <activity android:name=".BeExpo.BeExpo8_pq" />

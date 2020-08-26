@@ -110,17 +110,19 @@
                 android:textAllCaps="true"
                 android:textSize="18sp"
                 android:textStyle="bold" />
+
             <Button
                 android:id="@+id/sp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/round_button"
                 android:layout_margin="10dp"
+                android:background="@drawable/round_button"
                 android:text="@string/extc7_sp"
                 android:textAlignment="center"
                 android:textAllCaps="true"
                 android:textSize="18sp"
                 android:textStyle="bold" />
+
             <Button
                 android:id="@+id/tve"
                 android:layout_width="match_parent"

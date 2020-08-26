@@ -1,5 +1,7 @@
 package com.wingzapp.wingz.ui.home;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -26,12 +28,15 @@ import com.wingzapp.wingz.R;
 import com.wingzapp.wingz.SyllabusActivity;
 import com.wingzapp.wingz.TimeTableActivity;
 
+import java.util.Objects;
+
 public class HomeFragment extends Fragment {
     private LinearLayout[] liner = new LinearLayout[4];
+    private View[] views = new View[4];
     TextView name;
+    AlertDialog.Builder builder;
     DatabaseReference host;
-    String id = FirebaseAuth.getInstance().getCurrentUser().getUid();
-
+    String id = Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid();
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_home, container, false);
@@ -43,6 +48,7 @@ public class HomeFragment extends Fragment {
         Button be_syll = root.findViewById(R.id.be_syll);
         ImageButton[] buts = new ImageButton[4];
         ImageButton res = root.findViewById(R.id.result_btn);
+        builder = new AlertDialog.Builder(getActivity());
         host = FirebaseDatabase.getInstance().getReference().child("Student");
         name=root.findViewById(R.id.user_name);
         read();
@@ -58,6 +64,7 @@ public class HomeFragment extends Fragment {
         for (int i = 0; i < buts.length; i++) {
             buts[i] = root.findViewById(R.id.but1 + i);
             liner[i] = root.findViewById(R.id.line1 + i);
+            views[i] = root.findViewById(R.id.view1 + i);
             buts[i].setOnClickListener(butHandler);
 
         }
@@ -74,8 +81,27 @@ public class HomeFragment extends Fragment {
         be_notes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), NotesActivity.class);
-                startActivity(intent);
+                builder.setMessage("This is not Ready Yet! " +
+                        "Do you want Proceed.")
+                        .setCancelable(false).setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent intent = new Intent(getActivity(), NotesActivity.class);
+                        startActivity(intent);
+                    }
+                })
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+
+
+                AlertDialog alert = builder.create();
+                alert.setTitle("Notes");
+                alert.show();
+
             }
         });
         be_syll.setOnClickListener(new View.OnClickListener() {
@@ -128,24 +154,30 @@ public class HomeFragment extends Fragment {
                     liner[1].setVisibility(View.GONE);
                     liner[2].setVisibility(View.GONE);
                     liner[3].setVisibility(View.GONE);
+                    views[0].setVisibility(View.VISIBLE);views[1].setVisibility(View.INVISIBLE);views[2].setVisibility(View.INVISIBLE);views[3].setVisibility(View.INVISIBLE);
                     break;
                 case R.id.but2:
                     liner[0].setVisibility(View.GONE);
                     liner[1].setVisibility(View.VISIBLE);
                     liner[2].setVisibility(View.GONE);
                     liner[3].setVisibility(View.GONE);
+                    views[0].setVisibility(View.INVISIBLE);views[1].setVisibility(View.VISIBLE);views[2].setVisibility(View.INVISIBLE);views[3].setVisibility(View.INVISIBLE);
+
                     break;
                 case R.id.but3:
                     liner[0].setVisibility(View.GONE);
                     liner[1].setVisibility(View.GONE);
                     liner[2].setVisibility(View.VISIBLE);
                     liner[3].setVisibility(View.GONE);
+                    views[0].setVisibility(View.INVISIBLE);views[1].setVisibility(View.INVISIBLE);views[2].setVisibility(View.VISIBLE);views[3].setVisibility(View.INVISIBLE);
+
                     break;
                 case R.id.but4:
                     liner[0].setVisibility(View.GONE);
                     liner[1].setVisibility(View.GONE);
                     liner[2].setVisibility(View.GONE);
                     liner[3].setVisibility(View.VISIBLE);
+                    views[0].setVisibility(View.INVISIBLE);views[1].setVisibility(View.INVISIBLE);views[2].setVisibility(View.INVISIBLE);views[3].setVisibility(View.VISIBLE);
                     break;
 
             }
