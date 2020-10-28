@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".app_info">
+    <LinearLayout
+        android:gravity="center"
+        android:orientation="vertical"
+        android:background="#ffffff"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <TextView
+            android:textSize="25.0sp"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimary"
+            android:gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="WingApp V1.0.1"
+            android:fontFamily="sans-serif-black"
+            android:textAlignment="center"
+            tools:ignore="HardcodedText" />
+        <ImageView android:layout_width="50.0dip"
+            android:layout_height="50.0dip"
+            android:layout_marginTop="10.0dip"
+            android:src="@drawable/ic_baseline_info_24"
+            android:contentDescription="@string/app_name" />
+        <TextView
+            android:textColor="@color/colorPrimary"
+            android:gravity="center_horizontal"
+            android:id="@id/textView2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10.0dip"
+            android:text="# by Wingzapp.co #"
+            android:textAlignment="center"
+            tools:ignore="HardcodedText" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

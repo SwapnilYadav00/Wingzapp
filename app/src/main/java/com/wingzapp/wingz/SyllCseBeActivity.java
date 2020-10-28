@@ -1,8 +1,5 @@
 package com.wingzapp.wingz;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
-
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
@@ -11,7 +8,9 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.ProgressBar;
-import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import static android.view.View.GONE;
 
@@ -44,7 +43,6 @@ Button sem3n4,sem5n6,sem7n8;
                 progressBar.setVisibility(GONE);
             }
         });
-
         sem3n4 = findViewById(R.id.sem3n4);
         sem5n6 = findViewById(R.id.sem5n6);
         sem7n8 = findViewById(R.id.sem7n8);
@@ -62,16 +60,21 @@ Button sem3n4,sem5n6,sem7n8;
         sem5n6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast toast= Toast.makeText(getApplicationContext(),"Not Available Yet!!",Toast.LENGTH_SHORT);
-                toast.show();
+                progressBar.setVisibility(View.VISIBLE);
+                webView.setVisibility(View.VISIBLE);
+                cardView.setVisibility(GONE);
+                webView.loadUrl("https://drive.google.com/viewerng/viewer?embedded=true&url=https://drive.google.com/u/1/uc?id=11EBuUjJP60Jjva-jw9ZDZZiAAAsz8cp_&export=download");
 
             }
         });
+
         sem7n8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast toast= Toast.makeText(getApplicationContext(),"Not Available Yet!!",Toast.LENGTH_SHORT);
-                toast.show();
+                progressBar.setVisibility(View.VISIBLE);
+                webView.setVisibility(View.VISIBLE);
+                cardView.setVisibility(GONE);
+                webView.loadUrl("https://drive.google.com/viewerng/viewer?embedded=true&url=https://drive.google.com/u/1/uc?id=11HLEEtqkRWag3MbsasbzWZ-7JpJS59Ho&export=download");
 
             }
         });

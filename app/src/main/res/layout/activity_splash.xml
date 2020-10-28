@@ -15,5 +15,6 @@
         android:layout_centerInParent="true"
         android:background="#157EFB"
         android:contentDescription="WingZ"
-        app:srcCompat="@drawable/pp" />
+        app:srcCompat="@drawable/pp"
+        tools:ignore="HardcodedText" />
 </RelativeLayout>

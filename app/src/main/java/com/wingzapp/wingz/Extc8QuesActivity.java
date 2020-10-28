@@ -2,6 +2,7 @@ package com.wingzapp.wingz;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -21,6 +22,7 @@ import com.wingzapp.wingz.BeExtc.BeExtc8_Wsn;
 public class Extc8QuesActivity extends AppCompatActivity {
     Button ai,ccn,cmos,dip,es,mre,raa,rst,sc,wsn;
 
+    @SuppressLint("CutPasteId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,7 +31,7 @@ public class Extc8QuesActivity extends AppCompatActivity {
         ai=findViewById(R.id.ai);
         ccn=findViewById(R.id.ccn);
         cmos=findViewById(R.id.cmos);
-        dip=findViewById(R.id.es);
+        dip=findViewById(R.id.dip);
         es=findViewById(R.id.es);
         mre=findViewById(R.id.mre);
         raa=findViewById(R.id.raa);

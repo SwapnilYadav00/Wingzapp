@@ -1,8 +1,5 @@
 package com.wingzapp.wingz;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
-
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
@@ -11,7 +8,9 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.ProgressBar;
-import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import static android.view.View.GONE;
 
@@ -52,23 +51,31 @@ public class SyllExpoBeActivity extends AppCompatActivity {
         sem3n4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast toast= Toast.makeText(getApplicationContext(),"Not Available Yet!!",Toast.LENGTH_SHORT);
-                toast.show();
+                progressBar.setVisibility(View.VISIBLE);
+                webView.setVisibility(View.VISIBLE);
+                cardView.setVisibility(GONE);
+                webView.loadUrl("https://drive.google.com/viewerng/viewer?embedded=true&url=https://drive.google.com/u/1/uc?id=13B4clDr3U7dNgLOnHmlhg_uluM3AhY5Y&export=download");
+
             }
         });
         sem5n6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast toast= Toast.makeText(getApplicationContext(),"Not Available Yet!!",Toast.LENGTH_SHORT);
-                toast.show();
+                progressBar.setVisibility(View.VISIBLE);
+                webView.setVisibility(View.VISIBLE);
+                cardView.setVisibility(GONE);
+                webView.loadUrl("https://drive.google.com/viewerng/viewer?embedded=true&url=https://drive.google.com/u/1/uc?id=11X2J8qKeIPFtOLkbc-5Wpj-XEi9_qAvQ&export=download");
 
             }
         });
+
         sem7n8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast toast= Toast.makeText(getApplicationContext(),"Not Available Yet!!",Toast.LENGTH_SHORT);
-                toast.show();
+                progressBar.setVisibility(View.VISIBLE);
+                webView.setVisibility(View.VISIBLE);
+                cardView.setVisibility(GONE);
+                webView.loadUrl("https://drive.google.com/viewerng/viewer?embedded=true&url=https://drive.google.com/u/1/uc?id=11Xsw61OPjUAiXu98aqO5pPmPPAwG9pEN&export=download");
 
             }
         });

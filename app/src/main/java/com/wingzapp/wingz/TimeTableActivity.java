@@ -23,7 +23,7 @@ String sem1tt,sem2tt,sem3tt,sem4tt,sem5tt,sem6tt,sem7tt,sem8tt;
         sem5tt ="11voBP5ohnq0UVZa5jUbcQbyD6j2HHz88";
         sem6tt ="11zZ1H2O7dEkFntaqZWsKlY2cxhPkp3iT";
         sem7tt ="120ulFcMWqnoy13bMdWZ-K2NY4ZlrpBLV";
-        sem8tt ="129Vkw9IpuRn3i5PvqZPMkvSU2sjtQi3_";
+        sem8tt ="1Uc6tEEZAQ3G7sMJKDqI_ZvS69q9JRkfQ";
 
         sem1.setOnClickListener(new View.OnClickListener() {
             @Override

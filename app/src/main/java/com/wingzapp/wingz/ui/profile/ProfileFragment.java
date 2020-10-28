@@ -1,14 +1,11 @@
 package com.wingzapp.wingz.ui.profile;
 
 import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -22,15 +19,11 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.wingzapp.wingz.Contactus;
 import com.wingzapp.wingz.Login;
-import com.wingzapp.wingz.MainActivity;
 import com.wingzapp.wingz.R;
-import com.wingzapp.wingz.SyllabusActivity;
-import com.wingzapp.wingz.TimeTableActivity;
-
-import java.util.Objects;
+import com.wingzapp.wingz.app_info;
 
 public class ProfileFragment extends Fragment {
-    TextView donate, contact, logout, name, number, email,web;
+    TextView  contact, logout, name, number, email,a_info;
     DatabaseReference host;
     AlertDialog.Builder builder;
     String id = FirebaseAuth.getInstance().getCurrentUser().getUid();
@@ -39,10 +32,9 @@ public class ProfileFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
 
         final View root = inflater.inflate(R.layout.fragment_profile, container, false);
-        donate = root.findViewById(R.id.donate);
         contact = root.findViewById(R.id.contact);
+        a_info = root.findViewById(R.id.appInfo);
         name = root.findViewById(R.id.name);
-        web = root.findViewById(R.id.website);
         number = root.findViewById(R.id.number);
         email = root.findViewById(R.id.email);
         builder = new AlertDialog.Builder(getActivity());
@@ -56,25 +48,14 @@ public class ProfileFragment extends Fragment {
                 startActivity(intent);
             }
         });
-        donate.setOnClickListener(new View.OnClickListener() {
+        a_info.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                builder.setMessage("Wingzapp serves many students, without charging a single penny from its user." +
-                        " However, for updating the existing module and adding new features require us to invest a fair amount of time and money." +
-                        "If you think that the services of Wingzapp are useful. Then you're welcomed to donate some money to Wingzapp." +
-                        "For donation please contact us.")
-                        .setCancelable(false).setPositiveButton("ok", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.cancel();
-                    }
-                });
-                AlertDialog alert = builder.create();
-                alert.setTitle("Donation");
-                alert.show();
+                Intent intent = new Intent(getActivity(), app_info.class);
+                startActivity(intent);
             }
         });
-        logout = root.findViewById(R.id.textView);
+        logout = root.findViewById(R.id.logout);
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -83,21 +64,10 @@ public class ProfileFragment extends Fragment {
                 getActivity().finish();
             }
         });
-        web.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openurl();
-            }
-        });
 
         return root;
     }
 
-    private void openurl() {
-        Uri uri=Uri.parse("https://wingzapp.blogspot.com");
-        Intent launchweb=new Intent(Intent.ACTION_VIEW, uri);
-        startActivity(launchweb);
-    }
 
     private void read() {
 

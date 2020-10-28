@@ -7,7 +7,6 @@
     <string name="prompt_password">Password</string>
     <string name="action_sign_up">Sign Up</string>
     <string name="action_sign_in_short">Login in</string>
-    <string name="welcome">"Welcome !"</string>
     <string name="login_failed">"Login failed"</string>
     <string name="male">Male</string>
     <string name="female">Female</string>
@@ -16,6 +15,19 @@
     <string name="name">Name</string>
     <string name="qppr">PAPER</string>
     <string name="notes">NOTES</string>
+    <string name="signinwithFacebook">Facebook</string>
+    <string name="signinwithGoogle">Google</string>
+    <string name="signup">SIGN UP</string>
+    <string name="singUptoContinue">Sign Up to start your new Journey</string>
+    <string name="singinwith">"OR Sign in with"</string>
+    <string name="welcome">Welcome !</string>
+    <string name="welcome002">Welcome</string>
+    <string name="welcomeBack">"Hello There,
+Welcome Back"</string>
+    <string name="logintoContinue">Log in to continue</string>
+    <string name="forgot">Forgot</string>
+    <string name="login">Log In</string>
+    <string name="alreadySignup">ALREADY HAVE AN ACCOUNT? LOGIN</string>
     <string name="syllabus">SYLLABUS</string>
     <string name="TT">TIME TABLE</string>
     <string name="result">RESULT</string>
